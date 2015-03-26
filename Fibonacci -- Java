@@ -1,0 +1,25 @@
+/*
+* author: Erhu Du
+* date: Mar/25/2015
+* function: get a value in fibonacci sequence
+*/
+public class Fibonacci {
+
+	public static void main(String[] args) {
+
+	}
+
+
+	public static int fibonacci(int n){ // recursive method
+		return (n<2)?1:(fibonacci(n-1)+fibonacci(n-2));
+	}
+	
+	public static int fib_dp(int N){  // dynamic programming method
+		int[] map = new int[N];
+		for(int i=0; i<N; i++){
+			map[i] = (i<2)?1:(map[i-1]+map[i-2]);
+		}
+		return map[N-1];
+	}
+	
+}
