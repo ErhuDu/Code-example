@@ -1,0 +1,31 @@
+public class Josephus_Problem {
+
+	public static void main(String[] args) {
+		int[] oldOrder = {1,3,5,6,8,7,9,4};
+		int[] newOrder = formNewArray(oldOrder, 4);
+		System.out.println("*******");
+		for(int i=0; i<newOrder.length; i++){
+			System.out.print(newOrder[i]+"\t");
+		}
+		
+
+	}
+
+
+	public static int[] formNewArray(int[] oldOrder, int breakPoint){
+		int[] newOrder = new int[oldOrder.length-1];
+		int i=0;
+		for(int j=(breakPoint+1); j<oldOrder.length; j++){
+			newOrder[i] = oldOrder[j];
+//			System.out.print(oldOrder[j]+" ");
+			i++;
+		}
+		System.out.println(">>>");
+		for(int k=0; k<breakPoint; k++){
+			newOrder[i] = oldOrder[k];
+//			System.out.print(oldOrder[k]+" ");
+			i++;
+		}
+		return newOrder;
+	}
+}
